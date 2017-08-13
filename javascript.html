@@ -1,0 +1,19 @@
+<script>
+ function preventFormSubmit() {
+   var forms = document.querySelectorAll('form');
+   for (var i = 0; i < forms.length; i++) {
+     forms[i].addEventListener('submit', function(event) {
+     event.preventDefault();
+   });
+  }
+ }
+window.addEventListener('load', preventFormSubmit);
+
+function handleFormSubmit(formObject) {
+  google.script.run.withSuccessHandler(successMsg).requestBot(formObject);
+}
+function successMsg(url) {
+        var div = document.getElementById('output');
+        div.innerHTML = '<h1>Time-Off Request Sent!</h1>';
+      }
+</script>

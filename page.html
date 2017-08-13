@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <?!= include('Stylesheet'); ?>
+    <script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="header">
+    <div class="headerText">
+    <h1>EZ-Request</h1>
+    <p>The Easy Way To Request Off</p>
+    </div>
+    </div>
+    <form class="container" onsubmit="handleFormSubmit(this)">
+	
+	<h2>BAH Service Desk Time-Off Form</h2>
+	<label id="nameLabel" for="name">Name:</label><br>
+    <input placeholder="ex.FirstName LastName" type="text" id="name" name="name" required><br>
+    <label for="dateTime">Date/Time:</label><br>
+    <input type="datetime-local" id="dateTime" name="startDate" required>
+    <span>To</span>
+    <input type="datetime-local" id="dateTime2" name="endDate" required>
+    <span><p>Choose Your Department</p></span>
+  <ul>
+  <li>
+    <input type="radio" id="p-option" name="department" value="PS" checked required>
+    <label for="p-option">PS</label>
+    <div class="check"><div class="inside"></div></div>
+  </li>
+  
+  <li>
+    <input type="radio" id="i-option" name="department" value="IS">
+    <label for="i-option">IS</label>
+    <div class="check"><div class="inside"></div></div>
+  </li>
+  <li>
+    <input type="radio" id="e-option" name="department" value="Email">
+    <label for="e-option">Email</label>
+    <div class="check"><div class="inside"></div></div>
+  </li>
+  <li>
+    <input type="radio" id="t-option" name="department" value="Tier2">
+    <label for="t-option">Tier 2</label>
+    <div class="check"><div class="inside"></div></div>
+  </li>
+  </ul>
+  <span><p>Choose Time Type</p></span>
+  <ul>
+  <li class="pto-option">
+    <input type="radio" id="f-option" name="timeType" value="PTO" checked>
+    <label for="f-option">PTO</label>
+    <div class="check"><div class="inside"></div></div>
+  </li>
+  <li>
+    <input type="radio" id="s-option" name="timeType" value="FH">
+    <label for="s-option">Floating Holiday</label>
+    <div class="check"><div class="inside"></div></div>
+  </li>
+  <li>
+    <input type="radio" id="v-option" name="timeType" value="volunteer">
+    <label for="v-option">Volunteer</label>
+    <div class="check"><div class="inside"></div></div>
+  </li>
+  </ul>
+  <fieldset>
+  <div class="ptoDetails">
+    <div class="ptoLabels">
+      <label for=ptoReq>PTO/FH Requested:</label>
+    <input placeholder="ex.8 Hours" type="text" name="ptoReq" required>
+    </div>
+    <div class="ptoLabels">
+      <label for="regHours">Regular Shift:</label>
+    <input placeholder="ex.10:00am-7:00pm" type="text" name="regHours" required>
+    </div>
+  </div>
+  <div>
+  <label id="pExLabel" for="name">Partial Day Details(if applicable):</label><br>
+   <input id="partialEx" placeholder="ex.Arriving, leaving, returning" type="text" name="partialEx"><br>
+   </div>
+  </fieldset>
+    <div id="output"></div>
+  <input id="submit" type="submit" value="submit"/>
+</form>
+
+    <?!= include('JavaScript'); ?>
+  </body>
+  <footer>
+    <div class="bugEmail">
+      <p>Report Bugs to Anthony.Blanton@compucom.com</p>
+    </div>
+  </footer>
+</html>
+
